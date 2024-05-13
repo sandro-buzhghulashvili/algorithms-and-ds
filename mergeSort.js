@@ -26,6 +26,7 @@ function merge(arr, L, M, R) {
   }
   while (k < right.length) {
     arr[i] = right[k];
+
     k += 1;
     i += 1;
   }
