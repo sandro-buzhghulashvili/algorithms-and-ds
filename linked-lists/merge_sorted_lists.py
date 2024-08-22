@@ -8,7 +8,7 @@ class ListNode:
 
 def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         resList = ListNode()
-        tail = resList
+        tail = resList 
 
         while list1 and list2:
             if list1.val < list2.val:
