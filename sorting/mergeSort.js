@@ -1,5 +1,3 @@
-const nums = [2, 31234, 123, 1];
-
 //[1,3]
 
 function merge(arr, L, M, R) {
@@ -35,13 +33,13 @@ function merge(arr, L, M, R) {
 function mergeSort(arr, left, right) {
   if (left === right) return arr;
   let mid = Math.floor((left + right) / 2); //
-  mergeSort(arr, left, mid); // [0]
+  mergeSort(arr, left, mid); // [2,4,2,1] -> left = 0
   mergeSort(arr, mid + 1, right); // [1]
   merge(arr, left, mid, right);
   return arr;
 }
 
-// [2,4,2,1]
+const nums = [2, 4, 2, 1];
 
 console.log(mergeSort(nums, 0, nums.length - 1));
 
