@@ -1,13 +1,24 @@
-def hanoi(n, start, end):
-    if n == 1: 
-        print(start, ">", end)
-        return
-    free_rod = 6 - (start + end) 
-    hanoi(n - 1, start, free_rod ) 
-    print(start, ">", end)
-    hanoi(n - 1, free_rod, end) 
+# def hanoi(n, start, end):
+#     if n == 1: 
+#         print(start, ">", end)
+#         return
+#     free_rod = 6 - (start + end) 
+#     hanoi(n - 1, start, free_rod ) 
+#     print(start, ">", end)
+#     hanoi(n - 1, free_rod, end) 
 
-hanoi(3,1,3)      
+# hanoi(3,1,3)      
+
+# def hanoi(n, start, end, free):
+#     if n == 1:
+#         print(f'{start} > {end}')
+#         return
+#     hanoi(n - 1, start, free, end)
+#     print(f'{start} > {end}')
+#     hanoi(n - 1, free, end, start)
+
+# hanoi(10, 1, 3, 2)
+
 
 
 # visualization of recursion :
