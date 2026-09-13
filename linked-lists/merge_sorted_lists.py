@@ -25,3 +25,4 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
             tail.next = list2
 
         return resList.next
+
