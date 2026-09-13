@@ -12,3 +12,4 @@ def removeElement(arr, value):
     return arr, k
 
 print(removeElement([1,2,5,4,2,3,1], 2))
+

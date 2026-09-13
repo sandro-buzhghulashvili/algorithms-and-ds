@@ -2,20 +2,17 @@ from typing import List
 
 
 def calPoints(self, operations: List[str]) -> int:
-        stack = []
-
+        recordStack = []
         for operation in operations:
-            if operation == "+":
-                a = stack.pop()
-                b = stack.pop()
-                stack.append(b)
-                stack.append(a)
-                stack.append(a + b)
+            if operation == 'C':
+                recordStack.pop()
             elif operation == 'D':
-                stack.append(stack[-1] * 2)
-            elif operation == 'C':
-                stack.pop()
+                recordStack.append(recordStack[-1] * 2)
+            elif operation == '+':
+                recordStack.append(recordStack[-1] + recordStack[-2])
             else:
-                stack.append(int(operation))
-
-        return sum(stack)
+                recordStack.append(int(operation))
+        sum = 0
+        for score in recordStack:
+            sum += (score)
+        return sum

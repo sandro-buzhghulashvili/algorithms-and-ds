@@ -9,3 +9,4 @@ def shuffle(self, nums: List[int], n: int) -> List[int]:
             res.append(nums[i])
             res.append(nums[i + n])
         return res
+
