@@ -23,6 +23,26 @@ class LinkedList:
             next_node.prev = new_node
             new_node.prev = prev_node
             new_node.next = next_node
+    
+    def reverseList(self):
+        cur = self.head.next
+
+        while cur and cur != self.tail:
+            next = cur.next
+            prev = cur.prev
+
+            cur.next = prev
+            cur.prev = next
+            cur = cur.prev
+        
+        self.tail.next,self.tail.prev = self.tail.prev, self.tail.next
+        self.head.next, self.head.prev = self.head.prev, self.head.next
+
+        self.head, self.tail = self.tail, self.head
+        
+
+
+
     def printList(self):
         cur = self.head.next
         result = ''
@@ -31,24 +51,6 @@ class LinkedList:
                 result += f'{cur.val} -> '
             cur = cur.next
         print(result + 'None.')
-    def reverseList(self):
-        cur = self.head.next
-
-        while cur and cur != self.tail:
-            next_node = cur.next
-            prev_node = cur.prev
-            cur.next = prev_node
-            cur.prev = next_node
-            cur = cur.prev
-        
-        new_head_real = self.tail.prev 
-        new_tail_real = self.head.next
-
-        self.head.next = new_head_real
-        new_head_real.prev = self.head
-
-        self.tail.prev = new_tail_real
-        new_tail_real.next = self.tail
 
         
 
