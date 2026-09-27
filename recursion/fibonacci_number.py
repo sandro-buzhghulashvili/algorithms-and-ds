@@ -15,3 +15,22 @@ def fib_iterative(n):
     return second_num
 
 print(fib_iterative(100))
+
+## Memoizing approach
+
+
+class Solution:
+    def __init__(self):
+        self.cache = {
+            0 : 0,
+            1 : 1
+        }
+    def fib(self, n: int) -> int:
+        if n in self.cache:
+            return self.cache[n]            
+        
+        res = self.fib(n - 1) + self.fib(n - 2)
+        self.cache[n] = res
+        
+        return res
+        

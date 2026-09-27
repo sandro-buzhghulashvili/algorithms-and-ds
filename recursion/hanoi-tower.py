@@ -19,6 +19,18 @@
 
 # hanoi(10, 1, 3, 2)
 
+## approach with better logging:
+def hanoi(n, start, end, temp):
+  if n == 1:
+    print(f'Disk {n} moved from : {start} -> {end}')
+    return
+  hanoi(n - 1, start, temp, end )
+  print(f'Disk {n} moved from : {start} -> {end}')
+  hanoi(n - 1, temp, end, start)
+  
+
+hanoi(3, 'A', 'C', 'B')
+
 
 
 # visualization of recursion :
